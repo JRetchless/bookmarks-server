@@ -16,28 +16,28 @@ bookmarksRouter
     const { title, url, description, rating } = req.body
 
     
-    if(!req.title){
-        logger.error(`${req.title} is required`)
-        return res.status(400).send(`${req.title} is required`);
+    if(!title){
+        logger.error(`Title is required`)
+        return res.status(400).send(`Invalid Data`);
     }
 
-    if(!req.rating){
-        logger.error(`${req.rating} is required`)
-        return res.status(400).send(`${req.rating} is required`);
+    if(!rating){
+        logger.error(`Rating is required`)
+        return res.status(400).send(`Invalid Data`);
     }
 
-    if(!req.url){
-        logger.error(`${req.url} is required`)
-        return res.status(400).send(`${req.url} is required`);
+    if(!url){
+        logger.error(`url is required`)
+        return res.status(400).send(`Invalid Data`);
     }
 
 
     if (isNaN(rating) || rating < 0 || rating > 5) {
-      logger.error(`${rating} is not a valid rating`)
+      logger.error(`rating must be a number between 0 and 5`)
       return res.status(400).send(`rating must be a number between 0 and 5`)
     }
 
-    const bookmark = { id: uuid(), title, url, description, rating }
+    const bookmark = {id: uuid(), title, url, description, rating }
 
     store.bookmarks.push(bookmark)
 
@@ -46,12 +46,12 @@ bookmarksRouter
       .status(201)
       .location(`http://localhost:8000/bookmarks/${bookmark.id}`)
       .json(bookmark)
-  })
+})
 
 bookmarksRouter
   .route('/bookmarks/:bookmarkId')
   .get((req, res) => {
-    const { bookmarkId } = req.params
+    const {bookmarkId} = req.params
 
     const bookmark = store.bookmarks.find(c => c.id == bookmarkId)
 
@@ -65,7 +65,7 @@ bookmarksRouter
     res.json(bookmark)
   })
   .delete((req, res) => {
-    const { bookmarkId } = req.params
+    const {bookmarkId} = req.params
 
     const bookmarkIndex = store.bookmarks.findIndex(b => b.id === bookmarkId)
 
