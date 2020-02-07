@@ -1,0 +1,10 @@
+{"message":"Unauthorized request to path: /favicon.ico","level":"error"}
+{"message":"Unauthorized request to path: /favicon.ico","level":"error"}
+{"message":"Bookmark with id id=c14b508f-52cd-4edc-8c31-32d17e7ff3e5 not found.","level":"error"}
+{"message":"Bookmark with id id=\"c14b508f-52cd-4edc-8c31-32d17e7ff3e5\" not found.","level":"error"}
+{"message":"Bookmark with id id:\"c14b508f-52cd-4edc-8c31-32d17e7ff3e5\" not found.","level":"error"}
+{"message":"Bookmark with id id:c14b508f-52cd-4edc-8c31-32d17e7ff3e5 not found.","level":"error"}
+{"message":"undefined is required","level":"error"}
+{"message":"undefined is required","level":"error"}
+{"message":"undefined is required","level":"error"}
+{"message":"undefined is required","level":"error"}
